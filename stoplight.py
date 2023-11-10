@@ -1,18 +1,17 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
-INDICATOR_LED_PIN = 12
+INDICATOR_LED_PIN = 17
 
 RED_LED_PIN = 5
 YELLOW_LED_PIN = 6
-GREEN1_LED_PIN = 13
+GREEN1_LED_PIN = 26
 GREEN2_LED_PIN = 19
-GREEN3_LED_PIN = 26
 
-BLUE_BUTTON_PIN = 22
-RED_BUTTON_PIN = 18
-YELLOW_BUTTON_PIN = 23
-GREEN_BUTTON_PIN = 24
+BLUE_BUTTON_PIN = 12
+RED_BUTTON_PIN = 23
+YELLOW_BUTTON_PIN = 24
+GREEN_BUTTON_PIN = 25
 
 def setup_pins():
     # Board Mode: BCM
@@ -37,9 +36,6 @@ def setup_pins():
     GPIO.setup(GREEN2_LED_PIN, GPIO.OUT)
     GPIO.output(GREEN2_LED_PIN, GPIO.LOW)
 
-    GPIO.setup(GREEN3_LED_PIN, GPIO.OUT)
-    GPIO.output(GREEN3_LED_PIN, GPIO.LOW)
-
     # Buttons
     GPIO.setup(BLUE_BUTTON_PIN, GPIO.IN)
     GPIO.setup(RED_BUTTON_PIN, GPIO.IN)
@@ -54,14 +50,12 @@ def all_leds(status):
         GPIO.output(YELLOW_LED_PIN, GPIO.HIGH)
         GPIO.output(GREEN1_LED_PIN, GPIO.HIGH)
         GPIO.output(GREEN2_LED_PIN, GPIO.HIGH)
-        GPIO.output(GREEN3_LED_PIN, GPIO.HIGH)
 
     else:
         GPIO.output(RED_LED_PIN, GPIO.LOW)
         GPIO.output(YELLOW_LED_PIN, GPIO.LOW)
         GPIO.output(GREEN1_LED_PIN, GPIO.LOW)
         GPIO.output(GREEN2_LED_PIN, GPIO.LOW)
-        GPIO.output(GREEN3_LED_PIN, GPIO.LOW)
 
 def led_on(pin):
     all_leds("off")
@@ -72,7 +66,6 @@ def green_on():
     all_leds("off")
     GPIO.output(GREEN1_LED_PIN, GPIO.HIGH)
     GPIO.output(GREEN2_LED_PIN, GPIO.HIGH)
-    GPIO.output(GREEN3_LED_PIN, GPIO.HIGH)
     
 
 
@@ -87,14 +80,15 @@ if __name__ == "__main__":
             if GPIO.input(GREEN_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
                 print("Light show!")
 
-                lightshow_on = True
+                # lightshow_on = True
+                lightshow_on = 0
                 loop_sleep_time = 0.1
 
                 all_leds("on")
                 sleep(0.5)
                 all_leds("off")
 
-                while lightshow_on == True:
+                while lightshow_on < 7:
 
                     led_on(RED_LED_PIN)
                     sleep(loop_sleep_time)
@@ -105,10 +99,13 @@ if __name__ == "__main__":
                     green_on()
                     sleep(loop_sleep_time)
 
-                    if GPIO.input(GREEN_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
-                        lightshow_on = False
-                        sleep(0.5)
+                    # if GPIO.input(GREEN_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
+                    #     lightshow_on = False
+                    #     sleep(0.5)
 
+                    lightshow_on = lightshow_on + 1
+
+                led_on(RED_LED_PIN)
 
 
             if GPIO.input(BLUE_BUTTON_PIN) == False and GPIO.input(RED_BUTTON_PIN) == False:
