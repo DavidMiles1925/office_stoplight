@@ -66,6 +66,36 @@ def green_on():
     all_leds("off")
     GPIO.output(GREEN1_LED_PIN, GPIO.HIGH)
     GPIO.output(GREEN2_LED_PIN, GPIO.HIGH)
+
+def light_show():
+    print("Light show!")
+
+    # lightshow_on = True
+    lightshow_on = 0
+    loop_sleep_time = 0.1
+
+    all_leds("on")
+    sleep(0.5)
+    all_leds("off")
+
+    while lightshow_on < 7:
+
+        led_on(RED_LED_PIN)
+        sleep(loop_sleep_time)
+
+        led_on(YELLOW_LED_PIN)
+        sleep(loop_sleep_time)
+
+        green_on()
+        sleep(loop_sleep_time)
+
+        # if GPIO.input(GREEN_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
+        #     lightshow_on = False
+        #     sleep(0.5)
+
+        lightshow_on = lightshow_on + 1
+
+    led_on(RED_LED_PIN)
     
 
 
@@ -74,38 +104,13 @@ if __name__ == "__main__":
 
     GPIO.output(INDICATOR_LED_PIN, GPIO.HIGH)
 
+    light_show()
+
     try:
         while True:
 
             if GPIO.input(GREEN_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
-                print("Light show!")
-
-                # lightshow_on = True
-                lightshow_on = 0
-                loop_sleep_time = 0.1
-
-                all_leds("on")
-                sleep(0.5)
-                all_leds("off")
-
-                while lightshow_on < 7:
-
-                    led_on(RED_LED_PIN)
-                    sleep(loop_sleep_time)
-
-                    led_on(YELLOW_LED_PIN)
-                    sleep(loop_sleep_time)
-
-                    green_on()
-                    sleep(loop_sleep_time)
-
-                    # if GPIO.input(GREEN_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
-                    #     lightshow_on = False
-                    #     sleep(0.5)
-
-                    lightshow_on = lightshow_on + 1
-
-                led_on(RED_LED_PIN)
+                light_show()
 
 
             if GPIO.input(BLUE_BUTTON_PIN) == False and GPIO.input(RED_BUTTON_PIN) == False:
