@@ -32,7 +32,7 @@ Please feel free to use everything here to build your own.
 
 **Main Unit - Final**
 
-![Main Unit](./media/main_unit.jpg)
+![Main Unit](./media/main_unit2.jpg)
 
 **Door Unit - Final**
 
