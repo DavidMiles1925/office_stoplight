@@ -83,71 +83,81 @@ def green_on():
     GPIO.output(GREEN2_LED_PIN, GPIO.HIGH)
 
 def light_show():
-    print("Light show!")
+    try:
+        print("Light show!")
 
-    # lightshow_on = True
-    lightshow_on = 0
-    loop_sleep_time = 0.1
+        # lightshow_on = True
+        lightshow_on = 0
+        loop_sleep_time = 0.1
 
-    all_leds("on")
-    sleep(0.5)
-    all_leds("off")
+        all_leds("on")
+        sleep(0.5)
+        all_leds("off")
 
-    while lightshow_on < 7:
+        while lightshow_on < 7:
+
+            led_on(RED1_LED_PIN)
+            led_on(RED2_LED_PIN)
+            sleep(loop_sleep_time)
+
+            led_on(YELLOW1_LED_PIN)
+            led_on(YELLOW2_LED_PIN)
+            sleep(loop_sleep_time)
+
+            green_on()
+            sleep(loop_sleep_time)
+
+            # if GPIO.input(GREEN_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
+            #     lightshow_on = False
+            #     sleep(0.5)
+
+            lightshow_on = lightshow_on + 1
 
         led_on(RED1_LED_PIN)
         led_on(RED2_LED_PIN)
-        sleep(loop_sleep_time)
 
-        led_on(YELLOW1_LED_PIN)
-        led_on(YELLOW2_LED_PIN)
-        sleep(loop_sleep_time)
-
-        green_on()
-        sleep(loop_sleep_time)
-
-        # if GPIO.input(GREEN_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
-        #     lightshow_on = False
-        #     sleep(0.5)
-
-        lightshow_on = lightshow_on + 1
-
-    led_on(RED1_LED_PIN)
-    led_on(RED2_LED_PIN)
+    except Exception as e:
+        print("The light_show function failed")
+        print(f"Error: {e}")
     
 
 def check_buttons():
-    if GPIO.input(RED_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
-        light_show()
+    try:
+        if GPIO.input(RED_BUTTON_PIN) == False and GPIO.input(YELLOW_BUTTON_PIN) == False:
+            light_show()
 
 
-    if GPIO.input(BLUE_BUTTON_PIN) == False and GPIO.input(RED_BUTTON_PIN) == False:
-        print("DONE")
-        GPIO.cleanup()
-        exit()
+        if GPIO.input(BLUE_BUTTON_PIN) == False and GPIO.input(RED_BUTTON_PIN) == False:
+            print("DONE")
+            GPIO.cleanup()
+            exit()
 
-        
-    if GPIO.input(BLUE_BUTTON_PIN) == False:
-        all_leds("off")
-        print("OFF")
-        sleep(0.2)
+            
+        if GPIO.input(BLUE_BUTTON_PIN) == False:
+            all_leds("off")
+            print("OFF")
+            sleep(0.2)
 
-    elif GPIO.input(RED_BUTTON_PIN) == False:
-        print("RED")
-        led_on(RED1_LED_PIN)
-        led_on(RED2_LED_PIN)
-        sleep(0.2)
+        elif GPIO.input(RED_BUTTON_PIN) == False:
+            print("RED")
+            led_on(RED1_LED_PIN)
+            led_on(RED2_LED_PIN)
+            sleep(0.2)
 
-    elif GPIO.input(YELLOW_BUTTON_PIN) == False:
-        print("YELLOW")
-        led_on(YELLOW1_LED_PIN)
-        led_on(YELLOW2_LED_PIN)
-        sleep(0.2)
+        elif GPIO.input(YELLOW_BUTTON_PIN) == False:
+            print("YELLOW")
+            led_on(YELLOW1_LED_PIN)
+            led_on(YELLOW2_LED_PIN)
+            sleep(0.2)
 
-    elif GPIO.input(GREEN_BUTTON_PIN) == False:
-        print(f"GREEN")
-        green_on()
-        sleep(0.2)
+        elif GPIO.input(GREEN_BUTTON_PIN) == False:
+            print(f"GREEN")
+            green_on()
+            sleep(0.2)
+
+    except Exception as e:
+        print("The check_buttons function failed")
+        print(f"Error: {e}")
 
 
 if __name__ == "__main__":
@@ -160,6 +170,10 @@ if __name__ == "__main__":
     try:
         while True:
             check_buttons()
+
+    except Exception as e:
+        print("The main function failed")
+        print(f"Error: {e}")
 
     except KeyboardInterrupt:
         print("DONE")
