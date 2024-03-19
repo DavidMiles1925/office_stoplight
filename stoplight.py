@@ -3,8 +3,10 @@ from time import sleep
 
 INDICATOR_LED_PIN = 17
 
-RED_LED_PIN = 5
-YELLOW_LED_PIN = 6
+RED1_LED_PIN = 5
+RED2_LED_PIN = 11
+YELLOW1_LED_PIN = 6
+YELLOW2_LED_PIN = 13
 GREEN1_LED_PIN = 26
 GREEN2_LED_PIN = 19
 
@@ -13,7 +15,7 @@ RED_BUTTON_PIN = 23
 YELLOW_BUTTON_PIN = 24
 GREEN_BUTTON_PIN = 25
 
-LED_PIN_ARRAY = [INDICATOR_LED_PIN, RED_BUTTON_PIN, YELLOW_BUTTON_PIN, GREEN1_LED_PIN, GREEN2_LED_PIN]
+LED_PIN_ARRAY = [INDICATOR_LED_PIN, RED1_LED_PIN, RED2_LED_PIN, YELLOW1_LED_PIN, YELLOW2_LED_PIN, GREEN1_LED_PIN, GREEN2_LED_PIN]
 BUTTON_PIN_ARRAY = [BLUE_BUTTON_PIN, RED_BUTTON_PIN, YELLOW_BUTTON_PIN, GREEN_BUTTON_PIN]
 
 def setup_pins():
@@ -93,10 +95,12 @@ def light_show():
 
     while lightshow_on < 7:
 
-        led_on(RED_LED_PIN)
+        led_on(RED1_LED_PIN)
+        led_on(RED2_LED_PIN)
         sleep(loop_sleep_time)
 
-        led_on(YELLOW_LED_PIN)
+        led_on(YELLOW1_LED_PIN)
+        led_on(YELLOW2_LED_PIN)
         sleep(loop_sleep_time)
 
         green_on()
@@ -108,7 +112,8 @@ def light_show():
 
         lightshow_on = lightshow_on + 1
 
-    led_on(RED_LED_PIN)
+    led_on(RED1_LED_PIN)
+    led_on(RED2_LED_PIN)
     
 
 def check_buttons():
@@ -129,12 +134,14 @@ def check_buttons():
 
     elif GPIO.input(RED_BUTTON_PIN) == False:
         print("RED")
-        led_on(RED_LED_PIN)
+        led_on(RED1_LED_PIN)
+        led_on(RED2_LED_PIN)
         sleep(0.2)
 
     elif GPIO.input(YELLOW_BUTTON_PIN) == False:
         print("YELLOW")
-        led_on(YELLOW_LED_PIN)
+        led_on(YELLOW1_LED_PIN)
+        led_on(YELLOW2_LED_PIN)
         sleep(0.2)
 
     elif GPIO.input(GREEN_BUTTON_PIN) == False:
