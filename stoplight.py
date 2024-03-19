@@ -29,9 +29,10 @@ def all_leds(status):
         for x in range(len(LED_PIN_ARRAY)):
             GPIO.output(LED_PIN_ARRAY[x], GPIO.LOW)
 
+    GPIO.output(INDICATOR_LED_PIN, GPIO.HIGH)
+
 
 def led_on(pin):
-    GPIO.output(INDICATOR_LED_PIN, GPIO.HIGH)
     GPIO.output(pin, GPIO.HIGH)
 
 
