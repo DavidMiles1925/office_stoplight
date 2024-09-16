@@ -18,6 +18,7 @@ GREEN_BUTTON_PIN = 25
 LED_PIN_ARRAY = [INDICATOR_LED_PIN, RED1_LED_PIN, RED2_LED_PIN, YELLOW1_LED_PIN, YELLOW2_LED_PIN, GREEN1_LED_PIN, GREEN2_LED_PIN]
 BUTTON_PIN_ARRAY = [BLUE_BUTTON_PIN, RED_BUTTON_PIN, YELLOW_BUTTON_PIN, GREEN_BUTTON_PIN]
 
+# This functions turns ALL LEDs "ON" or "OFF" depending on the status parameter
 
 def all_leds(status):
 
@@ -30,6 +31,7 @@ def all_leds(status):
             GPIO.output(LED_PIN_ARRAY[x], GPIO.LOW)
 
     GPIO.output(INDICATOR_LED_PIN, GPIO.HIGH)
+
 
 
 def led_on(pin):

@@ -16,7 +16,27 @@ Please feel free to use everything here to build your own.
 
 4. Link to set up your Raspberry Pi zero, and get it running the program on startup: **[Click Here](https://github.com/DavidMiles1925/pi_zero_setup)**
 
-## Diagram
+## Hardware
+
+### Connections
+
+| Purpose                  | Pin (BCM) |
+| ------------------------ | --------- |
+| Power Indicator          | 17        |
+| Red LED - Desk           | 5         |
+| Red LED - Hall           | 11        |
+| Yellow LED - Desk        | 6         |
+| Yellow LED - Hall        | 13        |
+| Green LED - Desk         | 26        |
+| Green LED - Hall         | 19        |
+| Button - Lights OFF      | 12        |
+| Button - Red Light ON    | 23        |
+| Button - Yellow Light ON | 24        |
+| Button - Green Light ON  | 25        |
+
+### Diagram
+
+**NEED DIAGRAM**
 
 ## What the Lights Mean
 
