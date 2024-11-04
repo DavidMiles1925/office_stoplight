@@ -18,6 +18,19 @@ Please feel free to use everything here to build your own.
 
 ## Hardware
 
+### Components List
+
+| Item                 | Quantity | Link        |
+| -------------------- | -------- | ----------- |
+| Raspberry Pi Zero    | 1        | Microcenter |
+| Red LEDs             | 2        | Amazon      |
+| Yellow LEDs          | 2        | Amazon      |
+| Green LEDs           | 2        | Amazon      |
+| BLue LED             | 1        | Amazon      |
+| 220 Ohm Resistors    | 6        | Amazon      |
+| 12mm Colored Buttons | 3        | Amazon      |
+| Two-Prong Button     | 1        | Amazon      |
+
 ### Connections
 
 | Purpose                  | Pin (BCM) |
@@ -33,10 +46,6 @@ Please feel free to use everything here to build your own.
 | Button - Red Light ON    | 23        |
 | Button - Yellow Light ON | 24        |
 | Button - Green Light ON  | 25        |
-
-### Diagram
-
-**NEED DIAGRAM**
 
 ## What the Lights Mean
 
