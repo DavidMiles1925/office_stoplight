@@ -1,22 +1,18 @@
 # Office Stoplight
 
+![Stoplight GIF](./media/office_stoplight_512.gif)
+
 ## Project Decription
 
 I work from home, and my workspace also happens to directly attatch to the garage. Because of this, my family often needs access to the garage, but does not know if I can be disturbed. This system will give them a definitive answer, by placing adjustable LEDs on the outside of the office and garage doors.
 
 Please feel free to use everything here to build your own.
 
-## Repo Contents
-
-1. Project Diagram - This is meant to aid in the construction of the circuitry. Please feel free to reach out if you have questions.
-
-2. Code - The "stoplight.py" file listed contains the code to run the program.
-
-3. 3D Models - These contain print casings and mountings for the device.
-
-4. Link to set up your Raspberry Pi zero, and get it running the program on startup: **[Click Here](https://github.com/DavidMiles1925/pi_zero_setup)**
-
 ## Hardware
+
+### Pre-requisites:
+
+1. You will need to set up a Raspberry Pi. **[Click Here for Instructions](https://github.com/DavidMiles1925/pi_zero_setup)**
 
 ### Components List
 
@@ -47,6 +43,38 @@ Please feel free to use everything here to build your own.
 | Button - Yellow Light ON | 24        |
 | Button - Green Light ON  | 25        |
 
+## Running the Code
+
+**1. Clone the Repo**
+
+```bash
+git clone https://github.com/DavidMiles1925/office_stoplight.git
+```
+
+**2. Navigate to Program Directory**
+
+```bash
+cd office_stoplight.git
+```
+
+**3. Test the program**
+
+```bash
+sudo python stoplight.py
+```
+
+**4. Set to Run on Startup**
+
+```bash
+sudo nano /etc/rc.local
+```
+
+**Add this to the file `rc.local`. _DO NOT FORGET THE "&"_**
+
+```bash
+sudo python /your_pi_name/office_stoplight/stoplight.py &
+```
+
 ## What the Lights Mean
 
 - **RED:** DO NOT DISTURB
@@ -61,7 +89,7 @@ Please feel free to use everything here to build your own.
 
 **Main Unit - Final**
 
-![Main Unit](./media/main_unit2.jpg)
+![Main Unit](./media/installed.jpg)
 
 **Door Unit - Final**
 
