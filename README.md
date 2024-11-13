@@ -16,6 +16,8 @@ Please feel free to use everything here to build your own.
 
 ### Components List
 
+NOTE: I used some larger LEDs for the "above door" unit, but that is optional.
+
 | Item                 | Quantity | Link                                                                                                   |
 | -------------------- | -------- | ------------------------------------------------------------------------------------------------------ |
 | Raspberry Pi Zero    | 1        | [Microcenter](https://www.microcenter.com/product/643085/raspberry-pi-zero-2-w)                        |
@@ -75,7 +77,7 @@ git clone https://github.com/DavidMiles1925/office_stoplight.git
 **2. Navigate to Program Directory**
 
 ```bash
-cd office_stoplight.git
+cd office_stoplight
 ```
 
 **3. Test the program**
