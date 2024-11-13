@@ -14,6 +14,18 @@ Please feel free to use everything here to build your own.
 
 1. You will need to set up a Raspberry Pi. **[Click Here for Instructions](https://github.com/DavidMiles1925/pi_zero_setup)**
 
+### Circuit Diagram
+
+This diagram represents the circuit for the "desK" unit. For the "door" unit, simply omit the buttons.
+
+![Diagram](./media/led_Circuit.png)
+
+**Resistor Values**
+
+Value for buttons: 1000 Ohm 
+Value for Green and Yellow LED: 147 Ohm
+Value for Red: 220 Ohm
+
 ### Components List
 
 | Item                 | Quantity | Link        |
