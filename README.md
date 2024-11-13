@@ -102,6 +102,7 @@ sudo python /your_pi_name/office_stoplight/stoplight.py &
 **Prototying**
 
 ![Prototype](./media/Prototyping.png)
+![Open](./media/main_unit2.jpg)
 
 **Main Unit - Final**
 
