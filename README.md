@@ -16,16 +16,19 @@ Please feel free to use everything here to build your own.
 
 ### Components List
 
-| Item                 | Quantity | Link        |
-| -------------------- | -------- | ----------- |
-| Raspberry Pi Zero    | 1        | Microcenter |
-| Red LEDs             | 2        | Amazon      |
-| Yellow LEDs          | 2        | Amazon      |
-| Green LEDs           | 2        | Amazon      |
-| BLue LED             | 1        | Amazon      |
-| 220 Ohm Resistors    | 6        | Amazon      |
-| 12mm Colored Buttons | 3        | Amazon      |
-| Two-Prong Button     | 1        | Amazon      |
+| Item                 | Quantity | Link                                                                                                   |
+| -------------------- | -------- | ------------------------------------------------------------------------------------------------------ |
+| Raspberry Pi Zero    | 1        | [Microcenter](https://www.microcenter.com/product/643085/raspberry-pi-zero-2-w)                        |
+| Red LEDs             | 2        | [Amazon](https://www.amazon.com/gp/product/B07QXR5MZB/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| Yellow LEDs          | 2        | [Amazon](https://www.amazon.com/gp/product/B07QXR5MZB/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| Green LEDs           | 2        | [Amazon](https://www.amazon.com/gp/product/B07QXR5MZB/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| BLue LED             | 1        | [Amazon](https://www.amazon.com/gp/product/B07QXR5MZB/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| 1KΩ Resistors        | 3        | [Amazon](https://www.amazon.com/gp/product/B07ZX2CB6B/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| 220Ω Resistors       | 2        | [Amazon](https://www.amazon.com/gp/product/B07ZX2CB6B/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| 147Ω Resistors       | 6        | [Amazon](https://www.amazon.com/gp/product/B07ZX2CB6B/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| 12mm Colored Buttons | 3        | [Amazon](https://www.amazon.com/gp/product/B075VBV4QH/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| Two-Prong Button     | 1        | [Amazon](https://www.amazon.com/gp/product/B0827LX3FV/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) |
+| Wire                 | 25ft     | [Amazon](https://www.amazon.com/gp/product/B0CFJY34GD/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)  |
 
 ### Circuit Diagram
 
@@ -58,6 +61,8 @@ Use the table in the [Connections](#connections) section to connect the pins to 
 | Button - Red Light ON    | 23        |
 | Button - Yellow Light ON | 24        |
 | Button - Green Light ON  | 25        |
+
+![Pi Diagram](./media/pinout_pi_zero_Office_Stoplight_marked.png)
 
 ## Running the Code
 
